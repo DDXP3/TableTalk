@@ -3,7 +3,9 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { useAppCtx } from "../../utils/AppProvider"
 import TTlogo from '/assets/TableTalk.png'
-
+import Home from '/images/house.png'
+import Search from '/images/search.png'
+import Profile from '/images/profile.png'
 
 
 export default function Header() {
@@ -27,6 +29,34 @@ export default function Header() {
             className="justify-content-end"
           >
             <Nav className="" style={{color: "#070808"}}>
+            {user?._id !== undefined ? (
+                <Nav.Link href="/feed" style={{color: "#070808",}}>
+                  <img src={Home} alt='/feed' style={{height: "50px", width: "50px"}}></img>
+                </Nav.Link>
+              ) : (
+                <Nav.Link href="/signup"style={{color: "#070808"}}>
+                  <img src={Home} alt='/feed' style={{height: "50px", width: "50px", display: "none"}}></img>
+                </Nav.Link>
+              )}
+              {user?._id !== undefined ? (
+                <Nav.Link href="/feed" style={{color: "#070808"}}>
+                  <img src={Search} alt='/search' style={{height: "50px", width: "50px"}}></img>
+                </Nav.Link>
+              ) : (
+                <Nav.Link href="/signup"style={{color: "#070808"}}>
+                  <img src={Search} alt='/search' style={{height: "50px", width: "50px", display: "none"}}></img>
+                </Nav.Link>
+              )}
+              {user?._id !== undefined ? (
+                <Nav.Link href="/feed" style={{color: "#070808"}}>
+                  <img src={Profile} alt='/profile' style={{height: "50px", width: "50px"}}></img>
+                </Nav.Link>
+              ) : (
+                <Nav.Link href="/signup"style={{color: "#070808"}}>
+                  <img src={Profile} alt='/profile' style={{height: "50px", width: "50px", display: "none"}}></img>
+                </Nav.Link>
+              )}
+
               {user?._id !== undefined ? (
                 <Nav.Link href="/feed" style={{color: "#070808",fontSize:"25px"}}>Profile Page</Nav.Link>
               ) : (

@@ -28,6 +28,34 @@ export default function Header() {
           >
             <Nav className="" style={{color: "#070808"}}>
               {user?._id !== undefined ? (
+                <Nav.Link href="/feed" style={{color: "#070808",fontSize:"25px"}}>
+                  <img src={Home} alt='/feed' style={{height: "50px", width: "50px"}}></img>
+                </Nav.Link>
+              ) : (
+                <Nav.Link href="/signup"style={{color: "#070808", fontSize:"25px"}}>
+                  <img src={Home} alt='/feed' style={{height: "50px", width: "50px"}}></img>
+                </Nav.Link>
+              )}
+              {user?._id !== undefined ? (
+                <Nav.Link href="/feed" style={{color: "#070808",fontSize:"25px"}}>
+                  <img src={Search} alt='/search' style={{height: "50px", width: "50px"}}></img>
+                </Nav.Link>
+              ) : (
+                <Nav.Link href="/signup"style={{color: "#070808", fontSize:"25px"}}>
+                  <img src={Search} alt='/search' style={{height: "50px", width: "50px"}}></img>
+                </Nav.Link>
+              )}
+              {user?._id !== undefined ? (
+                <Nav.Link href="/feed" style={{color: "#070808",fontSize:"25px"}}>
+                  <img src={Profile} alt='/profile' style={{height: "50px", width: "50px"}}></img>
+                </Nav.Link>
+              ) : (
+                <Nav.Link href="/signup"style={{color: "#070808", fontSize:"25px"}}>
+                  <img src={Profile} alt='/profile' style={{height: "50px", width: "50px"}}></img>
+                </Nav.Link>
+              )}
+
+              {user?._id !== undefined ? (
                 <Nav.Link href="/feed" style={{color: "#070808",fontSize:"25px"}}>Profile Page</Nav.Link>
               ) : (
                 <Nav.Link href="/signup"style={{color: "#070808", fontSize:"25px"}}>Sign Up</Nav.Link>
